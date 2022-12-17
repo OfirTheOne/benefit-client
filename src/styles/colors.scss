@@ -1,0 +1,115 @@
+:root {
+  /*Colors*/
+
+  --light-red: #FF4349;
+  --dark-red: #C70032;
+  --light-orange: #FF8500;
+  --light-orange-obscure: #E67700;
+  --dark-orange: #EA712F;
+  --light-green: #3DA930;
+  --light-blue: #84CBFD;
+  --blue: #009FDB;
+  --cobalt: #0057B8;
+  --white: #fff;
+  --light-gray: #F2F2F2;
+  --gray: #333333;
+  --black: #000000;
+  --dim-gray: #707070;
+  --snow: #FAFAFA;
+  --broken-white: #D1D1D1;
+  --ui-black: #1d2329;
+  --ui-light-gray: #dcdfe3;
+  --ui-dark-gray: #454b52;
+  --ui-gray: #878c94;
+  --ui-light-silver: #d6d6d6;
+
+  /* used only in the modal */
+  --modal-button-bg-color-midnight: #001F41;
+  --modal-hovered-color: white;
+  --black-russian: #00000029;
+
+  --ui-gray-consent: #F1F2F2;
+
+  /*This part is relevant for panel only and should be moved to relevant component*/
+  --panel-bg-color: var(--white);
+  --panel-action-color: var(--cobalt);
+  --panel-text-color: var(--ui-black);
+  --panel-date-color: var(--ui-dark-gray);
+  --toast-bg-color: var(--panel-bg-color);
+  --toast-text-color: var(--ui-dark-gray);
+  --panel-scroller-color: var(--ui-light-gray);
+  --panel-seperator-border-color: var(--ui-light-gray);
+  --panel-list-selected-item-bg: var(--light-gray);
+  --button-bg-color-disabled: var(--ui-light-gray);
+  --button-color-disabled: var(--ui-dark-gray);
+
+  --shared-tabs-text-color: var(--black);
+  --shared-tabs-selected-color: var(--cobalt);
+  --shared-tabs-base-border: var(--ui-light-gray);
+
+  --tool-tip-bg-color: var(--cobalt);
+  --tool-tip-text-color:var(--white);
+
+  --panel-text-color-reverse: var(--white);
+  /*Info-text-component */
+  --info-text-title-color:var(--black);
+
+  --broadcast-message-content-bg-color:var(--snow);
+  --broadcast-message-content-border-color:var(--dim-gray);
+  --broadcast-message-error-icon-color: var(--dark-red);
+
+  /*Shadows*/
+  --panel-shadow: 6px 0px 10px rgba(0, 0, 0, 0.14);
+
+  // Links
+  --link-blue: var(--light-blue);
+
+  // map toolbar buttons
+  --hover-bg-color: var(--ui-light-gray);
+
+  --table-row-bg-color: var(--snow);
+  --table-row-border-color: var(--snow);
+
+  --hover-bg-color-item: var(--light-gray);
+  --select-disabled-bg-color: var(--snow);
+  --select-disabled-border-color: var(--ui-light-gray);
+
+   /*Consent*/
+   --footer-bg-color: var(--ui-gray-consent);
+
+  /* Modal */
+  --modal-bg-color: var(--cobalt);
+  --modal-action-border: var(--white);
+  }
+
+
+  [data-theme="dark"] {
+      --panel-bg-color: var(--ui-dark-gray);
+      --panel-text-color: var(--white);
+      --panel-text-color-reverse: var(--ui-black);
+      --panel-action-color: var(--light-blue);
+      --panel-date-color: var(--ui-light-gray);
+      --panel-list-selected-item-bg: var(--ui-black);
+      --toast-text-color: var(--white);
+      --panel-scroller-color: var(--black);
+      --info-text-title-color:var(--white);
+      --tool-tip-bg-color:var(--light-blue);
+      --tool-tip-text-color:var(--black);
+      --broadcast-message-content-bg-color: var(--ui-black);
+      --broadcast-message-content-border-color:var(--ui-light-gray);
+      --broadcast-message-error-icon-color: var(--light-red);
+      --panel-seperator-border-color: var(--ui-light-silver);
+      --radio-color: var(--light-blue);
+      --hover-bg-color: var(--ui-black);
+      --table-row-bg-color: var(--ui-black);
+      --table-row-border-color: var(--broken-white);
+      --hover-bg-color-item: var(--black);
+      --select-disabled-bg-color: var(--ui-black);
+      --select-disabled-border-color: var(--ui-black);
+      --button-bg-color-disabled: var(--ui-gray);
+      --button-color-disabled: var(--ui-black);
+      --modal-bg-color: var(--light-blue);
+      --modal-action-border: var(--ui-dark-gray);
+      --modal-hovered-color: var(--light-blue);
+      --modal-button-bg-color-midnight: var(--ui-dark-gray);
+  }

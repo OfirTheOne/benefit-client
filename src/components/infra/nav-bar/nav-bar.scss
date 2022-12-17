@@ -1,0 +1,89 @@
+.NavBar {
+    --font-family: 'Source Sans Pro', sans-serif;
+    box-shadow: 0 8px 8px -10px rgb(0 0 0 / 15%);
+    border: none;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    line-height: 2.85rem;
+    z-index: 20;
+    right: 0;
+    height: 4.25rem;
+    background-color: #fff;
+    box-sizing: border-box;
+    width: auto;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    
+
+    .align-start-container {
+        margin-left: 60px;
+        flex-direction: row;
+        width: 20%;
+        display: flex;
+        align-items: center;
+        .nav-title-container {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: 600;
+        }  
+        .nav-logo-container {
+            display: flex;
+            align-items: center;
+        }  
+    }
+    .align-end-container {
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+        justify-content: space-between;
+
+        .nav-search-container {
+            display: flex;
+            align-items: center;
+        }
+        .nav-items-container {
+            display: flex;
+            gap: 1vw;
+            .nav-item {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                color: black;
+                a {   
+                    font-family: var(--font-family);
+                    font-size: 16px;
+                    font-weight: 600;
+                    display: flex;
+                    text-decoration: none;
+                }
+                &:hover {
+                    border-bottom: solid 2px;
+                    border-bottom-style: outset;
+                    border-color: azure;
+                }
+                &.selected {
+                    border-bottom: solid 2px;
+                    border-bottom-style: outset;
+                    border-color: black;
+                }
+            }
+        }
+        .icon-items-container {
+            padding-right: 2%;
+            width: 10%;
+            // height: inherit;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: end; 
+            // align-self: end;
+            .icon-item {
+                display: flex;
+            }
+        }
+    }
+
+}

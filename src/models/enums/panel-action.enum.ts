@@ -1,0 +1,14 @@
+export enum PanelAction {
+  SWITCH ,
+  INCIDENTS,
+  TEAMS,
+  RESPONDERS,
+  MARKERS,
+  SETTINGS,
+  HELP,
+  SEND_MESSAGE,
+  READ_MESSAGE,
+  CALL_PTT,
+  LOG_PTT,
+  EMPTY
+}

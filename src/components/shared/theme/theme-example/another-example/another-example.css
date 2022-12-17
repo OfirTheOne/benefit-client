@@ -1,0 +1,13 @@
+[data-theme="dark"] {
+  --font-color: white;
+  --background-color: grey; }
+
+[data-theme="light"] {
+  --font-color: black;
+  --background-color: lime; }
+
+.another-example-component {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  grid-row: 1;
+  grid-column: 2; }

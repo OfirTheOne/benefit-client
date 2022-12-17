@@ -1,0 +1,46 @@
+:root {
+  /*Colors*/
+  --light-red: #FF4349;
+  --dark-red: #C70032;
+  --light-orange: #FF8500;
+  --dark-orange: #EA712F;
+  --light-green: #3DA930;
+  --light-blue: #84CBFD;
+  --blue: #009FDB;
+  --cobalt: #0057B8;
+  --white: #fff;
+  --light-gray: #F2F2F2;
+  --gray: #333333;
+  --black: #000000;
+  --dim-gray: #707070;
+  --snow: #FAFAFA;
+  --ui-black: #1D2329;
+  --ui-light-gray: #DCDFE3;
+  --ui-dark-gray: #454B52;
+  --ui-gray: #878C94;
+  /*This part is relevant for panel only and should be moved to relevant component*/
+  --panel-bg-color: var(--white);
+  --panel-action-color: var(--cobalt);
+  --panel-text-color: var(--ui-black);
+  --toast-bg-color: var(--panel-bg-color);
+  --toast-text-color: var(--ui-dark-gray);
+  --panel-scroller-color: var(--ui-light-gray);
+  --panel-text-color-reverse: var(--white);
+  /*Info-text-component */
+  --info-text-title-color:var(--black);
+  --broadcast-message-content-bg-color:var(--snow);
+  --broadcast-message-content-border-color:var(--dim-gray);
+  /*Shadows*/
+  --panel-shadow: 6px 0px 10px rgba(0, 0, 0, 0.14);
+  --link-blue: var(--light-blue); }
+
+[data-theme="dark"] {
+  --panel-bg-color: var(--ui-dark-gray);
+  --panel-text-color: var(--white);
+  --panel-text-color-reverse: var(--ui-black);
+  --panel-action-color: var(--light-blue);
+  --toast-text-color: var(--white);
+  --panel-scroller-color: var(--black);
+  --info-text-title-color:var(--white);
+  --broadcast-message-content-bg-color:var(--ui-dark-gray);
+  --broadcast-message-content-border-color:var(--ui-light-gray); }

@@ -1,0 +1,163 @@
+:root {
+  /*Colors*/
+  --light-red: #FF4349;
+  --dark-red: #C70032;
+  --light-orange: #FF8500;
+  --dark-orange: #EA712F;
+  --light-green: #3DA930;
+  --light-blue: #84CBFD;
+  --blue: #009FDB;
+  --cobalt: #0057B8;
+  --white: #fff;
+  --light-gray: #F2F2F2;
+  --gray: #333333;
+  --black: #000000;
+  --ui-black: #1D2329;
+  --ui-light-gray: #DCDFE3;
+  --ui-dark-gray: #454B52;
+  --ui-gray: #878C94;
+  /*This part is relevant for panel only and should be moved to relevant component*/
+  --panel-bg-color: var(--white);
+  --panel-action-color: var(--cobalt);
+  --panel-text-color: var(--ui-black);
+  /*Shadows*/
+  --panel-shadow: 6px 0px 10px rgba(0, 0, 0, 0.14); }
+
+[data-theme="dark"] {
+  --panel-bg-color: var(--ui-dark-gray);
+  --panel-text-color: var(--white);
+  --panel-action-color: var(--light-blue); }
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url("../assets/fonts/HelveticaNeue.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Bold';
+  src: url("../assets/fonts/HelveticaNeue-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Bold Italic';
+  src: url("../assets/fonts/HelveticaNeue-BoldItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Condensed Black';
+  src: url("../assets/fonts/HelveticaNeue-CondensedBlack.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Condensed Bold';
+  src: url("../assets/fonts/HelveticaNeue-CondensedBold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Italic';
+  src: url("../assets/fonts/HelveticaNeue-Italic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Light';
+  src: url("../assets/fonts/HelveticaNeue-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Light Italic';
+  src: url("../assets/fonts/HelveticaNeue-LightItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Medium';
+  src: url("../assets/fonts/HelveticaNeue-Medium.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Medium Italic';
+  src: url("../assets/fonts/HelveticaNeue-MediumItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Thin';
+  src: url("../assets/fonts/HelveticaNeue-Thin.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue UltLtIta';
+  src: url("../assets/fonts/HelveticaNeue-UltLtIta.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Ultra Light';
+  src: url("../assets/fonts/HelveticaNeue-UltraLight.ttf") format("truetype"); }
+
+:root {
+  /* Font/text values */
+  /*For now these are used variants*/
+  --font-default: Helvetica Neue, sans-serif ;
+  --font-bold: Helvetica Neue Bold, sans-serif ;
+  --font-medium: Helvetica Neue Medium, sans-serif; }
+
+/*Font variants: this mixins should be moved to relevant components */
+/*Header*/
+/*Panels*/
+.panel__header {
+  color: var(--white);
+  font: normal normal normal 14px/21px var(--font-bold); }
+
+.panel__body {
+  color: var(--panel-text-color);
+  font: normal normal normal 14px/16px var(--font-default); }
+
+/*Ribbon*/
+/*Loader*/
+:root {
+  /*Colors*/
+  --light-red: #FF4349;
+  --dark-red: #C70032;
+  --light-orange: #FF8500;
+  --dark-orange: #EA712F;
+  --light-green: #3DA930;
+  --light-blue: #84CBFD;
+  --blue: #009FDB;
+  --cobalt: #0057B8;
+  --white: #fff;
+  --light-gray: #F2F2F2;
+  --gray: #333333;
+  --black: #000000;
+  --ui-black: #1D2329;
+  --ui-light-gray: #DCDFE3;
+  --ui-dark-gray: #454B52;
+  --ui-gray: #878C94;
+  /*This part is relevant for panel only and should be moved to relevant component*/
+  --panel-bg-color: var(--white);
+  --panel-action-color: var(--cobalt);
+  --panel-text-color: var(--ui-black);
+  /*Shadows*/
+  --panel-shadow: 6px 0px 10px rgba(0, 0, 0, 0.14); }
+
+[data-theme="dark"] {
+  --panel-bg-color: var(--ui-dark-gray);
+  --panel-text-color: var(--white);
+  --panel-action-color: var(--light-blue); }
+
+.panel {
+  background-color: var(--panel-bg-color);
+  box-shadow: var(--panel-shadow);
+  grid-row: 1;
+  grid-column: 1;
+  height: 100%;
+  align-self: end;
+  width: 280px; }
+
+.panel:not(:last-child) {
+  margin-right: 20px; }
+
+.panel__header {
+  align-items: center;
+  background-color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 0 0 20px;
+  text-transform: uppercase; }
+
+.panel__close {
+  background-color: transparent;
+  border: 0;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 22px;
+  width: 40px; }
+
+.panel__body {
+  padding: 20px; }

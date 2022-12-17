@@ -1,0 +1,21 @@
+
+.menu-popup {
+    display: none;
+    &.show {
+        height: 600px;
+        width: 300px;
+        position: absolute;
+        display: flex;
+        z-index: 999;
+    }
+
+    &.left {
+        top: 70px;
+        left: 20px;
+    }
+
+    &.right {
+        top: 70px;
+        right: 20px;
+    }
+}

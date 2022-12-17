@@ -1,0 +1,15 @@
+html {
+  box-sizing: border-box; }
+
+*, *::before, *::after {
+  box-sizing: inherit; }
+
+html, body, #root {
+  margin: 0;
+  font-family: var(--font-default);
+  height: 100%;
+  overflow: hidden; }
+
+.App {
+  width: 100%;
+  height: 100%; }

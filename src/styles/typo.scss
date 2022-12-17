@@ -1,0 +1,160 @@
+@import './colors.scss';
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../assets/fonts/HelveticaNeue.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Bold';
+    src: url('../assets/fonts/HelveticaNeue-Bold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Bold Italic';
+    src: url('../assets/fonts/HelveticaNeue-BoldItalic.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Condensed Black';
+    src: url('../assets/fonts/HelveticaNeue-CondensedBlack.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Condensed Bold';
+    src: url('../assets/fonts/HelveticaNeue-CondensedBold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Italic';
+    src: url('../assets/fonts/HelveticaNeue-Italic.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Light';
+    src: url('../assets/fonts/HelveticaNeue-Light.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Light Italic';
+    src: url('../assets/fonts/HelveticaNeue-LightItalic.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Medium';
+    src: url('../assets/fonts/HelveticaNeue-Medium.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Medium Italic';
+    src: url('../assets/fonts/HelveticaNeue-MediumItalic.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Thin';
+    src: url('../assets/fonts/HelveticaNeue-Thin.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Helvetica Neue UltLtIta';
+    src: url('../assets/fonts/HelveticaNeue-UltLtIta.ttf') format("truetype");
+}
+
+
+@font-face {
+    font-family: 'Helvetica Ultra Light';
+    src: url('../assets/fonts/HelveticaNeue-UltraLight.ttf') format("truetype");
+}
+
+
+
+:root {
+        /* Font/text values */
+        /*For now these are used variants*/
+        --font-default: Helvetica Neue, sans-serif ;
+        --font-bold: Helvetica Neue Bold, sans-serif ;
+        --font-medium: Helvetica Neue Medium, sans-serif;
+}
+
+/*Font variants: this mixins should be moved to relevant components */
+
+/*Header*/
+%header {
+    color: var(--blue);
+    font: normal normal medium 20px/24px var(--font-default);
+}
+
+/*Panels*/
+
+%panel-title {
+    color: var(--white);
+    font: normal normal normal 14px/21px var(--font-bold);
+}
+
+%panel-text {
+    color: var(--panel-text-color);
+    font: normal normal normal 14px/16px var(--font-default);
+}
+
+%panel-label {
+    color: var(--panel-text-color);
+    font: normal normal normal 14px/17px var(--font-default);
+}
+
+%panel-label-active {
+   @extend %panel-label;
+   color: var(--cobalt);
+}
+
+%panel-action {
+    color: var(--white);
+    font: normal normal normal 16px/19px var(--font-default);
+}
+
+%panel-utility-text {
+    color: var(--panel-text-color);
+    font: normal normal normal 14px/17px var(--font-default);
+}
+
+/*Item List*/
+
+%item-list-title {
+    font: normal normal bold 14px/22px var(--panel-text-color);
+}
+
+%item-list-desc {
+    font: normal normal normal 14px/22px var(--panel-text-color);
+}
+
+/*Ribbon*/
+
+%ribbon-label {
+    font: normal normal 700 16px/21px var(--font-default);
+}
+
+%ribbon-title {
+    font: normal normal 400 16px/21px var(--font-default);
+}
+
+%footer-link {
+    font: normal normal normal 10px/12px var(--font-default);
+}
+
+/*Loader*/
+
+%loader-text {
+    font: normal normal normal 15px/24px var(--font-default);
+    color: var(--black);
+}
+
+/*Toast*/
+
+%toast-title {
+    font: normal normal medium 18px/18px var(--font-default);
+    color: var(--toast-text-color);
+}
+
+%toast-desc {
+    font: normal normal normal 16px/18px var(--font-default);
+    color: var(--toast-text-color);
+}

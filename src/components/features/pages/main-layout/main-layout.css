@@ -1,0 +1,253 @@
+:root {
+  /*Colors*/
+  --light-red: #FF4349;
+  --dark-red: #C70032;
+  --light-orange: #FF8500;
+  --dark-orange: #EA712F;
+  --light-green: #3DA930;
+  --light-blue: #84CBFD;
+  --blue: #009FDB;
+  --cobalt: #0057B8;
+  --white: #fff;
+  --light-gray: #F2F2F2;
+  --gray: #333333;
+  --black: #000000;
+  --dim-gray: #707070;
+  --snow: #FAFAFA;
+  --ui-black: #1D2329;
+  --ui-light-gray: #DCDFE3;
+  --ui-dark-gray: #454B52;
+  --ui-gray: #878C94;
+  /*This part is relevant for panel only and should be moved to relevant component*/
+  --panel-bg-color: var(--white);
+  --panel-action-color: var(--cobalt);
+  --panel-text-color: var(--ui-black);
+  --toast-bg-color: var(--panel-bg-color);
+  --toast-text-color: var(--ui-dark-gray);
+  --panel-scroller-color: var(--ui-light-gray);
+  --panel-text-color-reverse: var(--white);
+  /*Info-text-component */
+  --info-text-title-color:var(--black);
+  --broadcast-message-content-bg-color:var(--snow);
+  --broadcast-message-content-border-color:var(--dim-gray);
+  /*Shadows*/
+  --panel-shadow: 6px 0px 10px rgba(0, 0, 0, 0.14);
+  --link-blue: var(--light-blue); }
+
+[data-theme="dark"] {
+  --panel-bg-color: var(--ui-dark-gray);
+  --panel-text-color: var(--white);
+  --panel-text-color-reverse: var(--ui-black);
+  --panel-action-color: var(--light-blue);
+  --toast-text-color: var(--white);
+  --panel-scroller-color: var(--black);
+  --info-text-title-color:var(--white);
+  --broadcast-message-content-bg-color:var(--ui-dark-gray);
+  --broadcast-message-content-border-color:var(--ui-light-gray); }
+
+:root {
+  /*Colors*/
+  --light-red: #FF4349;
+  --dark-red: #C70032;
+  --light-orange: #FF8500;
+  --dark-orange: #EA712F;
+  --light-green: #3DA930;
+  --light-blue: #84CBFD;
+  --blue: #009FDB;
+  --cobalt: #0057B8;
+  --white: #fff;
+  --light-gray: #F2F2F2;
+  --gray: #333333;
+  --black: #000000;
+  --dim-gray: #707070;
+  --snow: #FAFAFA;
+  --ui-black: #1D2329;
+  --ui-light-gray: #DCDFE3;
+  --ui-dark-gray: #454B52;
+  --ui-gray: #878C94;
+  /*This part is relevant for panel only and should be moved to relevant component*/
+  --panel-bg-color: var(--white);
+  --panel-action-color: var(--cobalt);
+  --panel-text-color: var(--ui-black);
+  --toast-bg-color: var(--panel-bg-color);
+  --toast-text-color: var(--ui-dark-gray);
+  --panel-scroller-color: var(--ui-light-gray);
+  --panel-text-color-reverse: var(--white);
+  /*Info-text-component */
+  --info-text-title-color:var(--black);
+  --broadcast-message-content-bg-color:var(--snow);
+  --broadcast-message-content-border-color:var(--dim-gray);
+  /*Shadows*/
+  --panel-shadow: 6px 0px 10px rgba(0, 0, 0, 0.14);
+  --link-blue: var(--light-blue); }
+
+[data-theme="dark"] {
+  --panel-bg-color: var(--ui-dark-gray);
+  --panel-text-color: var(--white);
+  --panel-text-color-reverse: var(--ui-black);
+  --panel-action-color: var(--light-blue);
+  --toast-text-color: var(--white);
+  --panel-scroller-color: var(--black);
+  --info-text-title-color:var(--white);
+  --broadcast-message-content-bg-color:var(--ui-dark-gray);
+  --broadcast-message-content-border-color:var(--ui-light-gray); }
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url("../assets/fonts/HelveticaNeue.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Bold';
+  src: url("../assets/fonts/HelveticaNeue-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Bold Italic';
+  src: url("../assets/fonts/HelveticaNeue-BoldItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Condensed Black';
+  src: url("../assets/fonts/HelveticaNeue-CondensedBlack.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Condensed Bold';
+  src: url("../assets/fonts/HelveticaNeue-CondensedBold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Italic';
+  src: url("../assets/fonts/HelveticaNeue-Italic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Light';
+  src: url("../assets/fonts/HelveticaNeue-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Light Italic';
+  src: url("../assets/fonts/HelveticaNeue-LightItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Medium';
+  src: url("../assets/fonts/HelveticaNeue-Medium.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Medium Italic';
+  src: url("../assets/fonts/HelveticaNeue-MediumItalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue Thin';
+  src: url("../assets/fonts/HelveticaNeue-Thin.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Neue UltLtIta';
+  src: url("../assets/fonts/HelveticaNeue-UltLtIta.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Helvetica Ultra Light';
+  src: url("../assets/fonts/HelveticaNeue-UltraLight.ttf") format("truetype"); }
+
+:root {
+  /* Font/text values */
+  /*For now these are used variants*/
+  --font-default: Helvetica Neue, sans-serif ;
+  --font-bold: Helvetica Neue Bold, sans-serif ;
+  --font-medium: Helvetica Neue Medium, sans-serif; }
+
+/*Font variants: this mixins should be moved to relevant components */
+/*Header*/
+.main__header__title {
+  color: var(--blue);
+  font: normal normal medium 20px/24px var(--font-default); }
+
+/*Panels*/
+/*Ribbon*/
+/*Loader*/
+/*Toast*/
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+  .main__center-section {
+    display: flex;
+    align-items: center;
+    flex: 1; }
+    .main__center-section__sidebar {
+      display: flex;
+      flex-direction: column;
+      height: 100%; }
+    .main__center-section__body {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden; }
+  .main__header {
+    background-color: var(--black);
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    padding: 0 20px; }
+    .main__header__logo {
+      height: 17px;
+      width: 105px;
+      margin-right: 20px; }
+  .main__ribbon {
+    text-align: center;
+    color: var(--white);
+    font-size: 16px; }
+  .main__footer {
+    background-color: var(--black);
+    display: flex;
+    justify-content: flex-end;
+    font-size: 10px;
+    padding: 0 25px; }
+    .main__footer__item {
+      color: var(--white);
+      text-decoration: none;
+      padding: 0 5px; }
+  .main .theme-switch-wrap {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    color: var(--panel-text-color);
+    background-color: var(--panel-bg-color);
+    padding: 15px; }
+    .main .theme-switch-wrap > label {
+      margin-right: 15px; }
+    .main .theme-switch-wrap .switch__container + label {
+      margin-left: 15px; }
+  .main.left-open .esri-ui-bottom-left {
+    transition: ease-in-out 0.2s;
+    left: 280px; }
+
+.map {
+  height: 100%;
+  width: 100%;
+  grid-row: 1;
+  grid-column: 1 / 6; }
+
+@media (max-height: 552px) and (max-width: 474px) {
+  .right-open .RightPanel.nav-active:not(.second) .nav-item:first-child {
+    margin-top: 45px; }
+  .right-open .RightPanel.nav-active.second .nav-item:first-child {
+    margin-top: -77px; }
+  .right-open .RightPanel.nav-active.second .collapse-icon-wrap {
+    top: calc(50% + 156px);
+    background: transparent; } }
+
+@media (max-width: 474px) {
+  .right-open .RightPanel {
+    left: 65px; }
+    .right-open .RightPanel .nav-items-wrap {
+      left: -65px;
+      top: 0 !important;
+      height: calc(100vh - 97px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .right-open .RightPanel .nav-items-wrap .collapse-icon-wrap {
+        background: none; } }
+  @media (max-width: 474px) and (max-height: 474px) {
+    .right-open .RightPanel.first .nav-items-wrap {
+      justify-content: flex-end; }
+    .right-open .RightPanel.second .nav-items-wrap {
+      padding-bottom: 85px; }
+      .right-open .RightPanel.second .nav-items-wrap .collapse-icon-wrap {
+        top: calc(50% + 115px); } }
