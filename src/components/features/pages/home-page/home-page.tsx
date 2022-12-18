@@ -1,8 +1,7 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { fetchCouponsThunk } from '../../../../redux/features/coupons/coupons.thunks';
 import { useAppSelector } from '../../../../redux/root-reducer';
 import { useAppDispatch } from '../../../../redux/store';
-import { CouponCard } from "../../coupon/coupon-card/coupon-card";
 import { CouponCarousel } from '../../coupon/coupon-carousel/coupon-carousel';
 import { CouponDetailsDrawer } from '../../coupon/coupon-details-drawer/coupon-details-drawer';
 

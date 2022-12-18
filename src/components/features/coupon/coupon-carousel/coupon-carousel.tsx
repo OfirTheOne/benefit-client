@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import { Paper, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import Box from '@mui/system/Box';
 import { Carousel } from '../../../infra/carousel/carousel';
 import { Coupon } from '../../../../types/coupon/coupon.interface';
