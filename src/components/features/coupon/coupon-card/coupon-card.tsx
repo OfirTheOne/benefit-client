@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Box, Paper, SwipeableDrawer, Typography } from '@mui/material';
-import { useAppSelector } from '../../../../redux/root-reducer';
-import { useCallback, useEffect } from 'react';
+import { Box } from '@mui/material';
 import { useAppDispatch } from '../../../../redux/store';
-import { setSelectedCoupon, removeSelectedCoupon } from '../../../../redux/features/coupons/coupons.slice';
+import { setSelectedCoupon } from '../../../../redux/features/coupons/coupons.slice';
+import { Typography } from '../../../infra/typography/typography';
+import { TypographyContext } from '../../../infra/typography/typography-context.enum';
 
 
 interface CouponCardProps {
@@ -42,7 +42,6 @@ export const CouponCard: React.FC<CouponCardProps> = () => {
       style={{
         position: 'relative',
         borderRadius: '8px'
-
       }}
       onClick={() => dispatch(setSelectedCoupon(item))}
     >
@@ -63,100 +62,15 @@ export const CouponCard: React.FC<CouponCardProps> = () => {
           background: CARD_DISPLAY.text.background,
           borderBottomLeftRadius: '8px',
           borderBottomRightRadius: '8px',
-
         }}
       >
-        <Typography component="h2" style={{
-          fontWeight: CARD_DISPLAY.text.fontWeight,
-          fontSize: CARD_DISPLAY.text.fontSize,
+        <Typography text={item.title} context={TypographyContext.sliderCardTitle} style={{
           color: CARD_DISPLAY.text.color,
           paddingRight: '8px',
           paddingTop: '4px'
-        }} >
-          {item.title}
-        </Typography>
+        }} />
+
       </Box>
     </Box>
   );
-}
-
-
-const CouponDetailsDrawer = () => {
-
-  const selectedCoupon = useAppSelector(state => state.couponsState.selectedCoupon);
-  const dispatch = useAppDispatch();
-  const [state, setState] = React.useState(false);
-
-  useEffect(() => {
-    if(selectedCoupon) {
-      setState(true);
-    }
-    return () => setState(false);
-  }, [selectedCoupon]);
-
-  const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' ||
-        (event as React.KeyboardEvent).key === 'Shift')
-    ) {
-      return;
-    }
-
-    setState(open);
-  };
-
-  const onCloseCb= useCallback((event: React.KeyboardEvent | React.MouseEvent) => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' ||
-        (event as React.KeyboardEvent).key === 'Shift')
-    ) {
-      return;
-    }
-    dispatch(removeSelectedCoupon())
-    setState(false);
-  }, []);
-
-  const onOpenCb= useCallback((event: React.KeyboardEvent | React.MouseEvent) => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' ||
-        (event as React.KeyboardEvent).key === 'Shift')
-    ) {
-      return;
-    }
-
-    setState(true);
-  }, []);
-
-  return (
-    <SwipeableDrawer
-      anchor={'bottom'}
-      open={state}
-      onClose={toggleDrawer(false)}
-      onOpen={toggleDrawer(true)}
-    >
-      <CouponDetails />
-    </SwipeableDrawer>
-  )
-}
-
-const CouponDetails = () => {
-  return (
-    <Box
-      width={'100vw'}
-      height={'50vh'}
-    >
-      <Typography component="h2" style={{
-        fontWeight: CARD_DISPLAY.text.fontWeight,
-        fontSize: CARD_DISPLAY.text.fontSize,
-      }} >
-        {'title'}
-      </Typography>
-    </Box>
-  )
 }
