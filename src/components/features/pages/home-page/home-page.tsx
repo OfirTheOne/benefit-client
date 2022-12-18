@@ -1,5 +1,4 @@
 import React, {  } from 'react';
-import { Carousel } from '../../../infra/carousel/carousel';
 import { CouponCard } from "../../coupon/coupon-card/coupon-card";
 import { CouponCarousel } from '../../coupon/coupon-carousel/coupon-carousel';
 import { CouponDetailsDrawer } from '../../coupon/coupon-details-drawer/coupon-details-drawer';

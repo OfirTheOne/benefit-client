@@ -105,9 +105,7 @@ export const AppRouter: React.FC<React.PropsWithChildren<{}>> = () => {
                 }
                 errorElement={<ErrorPage />}
             >
-                <Route path="home" element={<HomePage />} />
-                <Route path="challenges/type/:challenge_type/" element={<div> aaa </div> } />
-                <Route path="challenges/type/:challenge_type/create/" element={<div> bbb </div> }  />
+                <Route path="/" element={<HomePage />} />
             </Route>
             {/* <Route path="/unauthorized" element={() => <div><h1>Unauthorized</h1></div>} /> */}
         </Route>
