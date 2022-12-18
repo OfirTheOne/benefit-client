@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CouponsState } from '../../../types/coupon/coupon-state.interface';
 import { Coupon } from '../../../types/coupon/coupon.interface';
+import { fetchCouponsThunk } from './coupons.thunks';
 
 
 export const initialState: CouponsState = {
+  coupons: []
 };
 
 const couponsSlice = createSlice({
@@ -17,8 +19,10 @@ const couponsSlice = createSlice({
       state.selectedCoupon = undefined;
     },
   },
-  extraReducers: (_builder) => {
-  
+  extraReducers: (builder) => {
+    builder.addCase(fetchCouponsThunk.fulfilled, (state, action) => {
+      state.coupons = action.payload;
+    })
   },
 });
 

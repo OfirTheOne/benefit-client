@@ -1,4 +1,7 @@
-import React, {  } from 'react';
+import React, { useEffect, useMemo } from 'react';
+import { fetchCouponsThunk } from '../../../../redux/features/coupons/coupons.thunks';
+import { useAppSelector } from '../../../../redux/root-reducer';
+import { useAppDispatch } from '../../../../redux/store';
 import { CouponCard } from "../../coupon/coupon-card/coupon-card";
 import { CouponCarousel } from '../../coupon/coupon-carousel/coupon-carousel';
 import { CouponDetailsDrawer } from '../../coupon/coupon-details-drawer/coupon-details-drawer';
@@ -6,14 +9,18 @@ import { CouponDetailsDrawer } from '../../coupon/coupon-details-drawer/coupon-d
 interface Props { }
 
 export const HomePage: React.FC<Props> = () => {
-    const items = (new Array(20)).fill(<CouponCard/>);
+    const dispatch = useAppDispatch();
+    const coupons = useAppSelector(state => state.couponsState.coupons)
+    useEffect(() => {
+        dispatch(fetchCouponsThunk())
+    }, []);
 
     return (
         <div className={`HomePage`} data-testid="HomePage">
             <div style={{ margin: '60px' }} />
-            <CouponCarousel style={{ marginTop: '12px', marginBottom: '8px' }} title='הפועלים' items={items}/>
-            <CouponCarousel style={{ marginTop: '12px', marginBottom: '8px' }} title='הפייס' items={items}/>
-            <CouponCarousel style={{ marginTop: '12px', marginBottom: '8px' }} title='Max' items={items}/>
+            <CouponCarousel style={{ marginTop: '12px', marginBottom: '8px' }} title='הפועלים' coupons={coupons}/>
+            <CouponCarousel style={{ marginTop: '12px', marginBottom: '8px' }} title='הפייס' coupons={coupons}/>
+            <CouponCarousel style={{ marginTop: '12px', marginBottom: '8px' }} title='Max' coupons={coupons}/>
             <CouponDetailsDrawer />
         </div>
     );

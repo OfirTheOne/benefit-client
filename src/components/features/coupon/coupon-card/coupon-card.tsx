@@ -4,10 +4,11 @@ import { useAppDispatch } from '../../../../redux/store';
 import { setSelectedCoupon } from '../../../../redux/features/coupons/coupons.slice';
 import { Typography } from '../../../infra/typography/typography';
 import { TypographyContext } from '../../../infra/typography/typography-context.enum';
+import { Coupon } from '../../../../types/coupon/coupon.interface';
 
 
 interface CouponCardProps {
-
+  coupon: Coupon
 }
 
 
@@ -22,18 +23,8 @@ const CARD_DISPLAY = {
   }
 }
 
-export const CouponCard: React.FC<CouponCardProps> = () => {
+export const CouponCard: React.FC<CouponCardProps> = ({ coupon }) => {
   const dispatch = useAppDispatch();
-
-  const item = {
-    link: "https://paisplus.co.il/product/18124",
-    image: "https://media.dolcemaster.co.il/products/20220914093803.jpg",
-    title: "פארטי פיצוץ - גלידה משפחתית במקדונלד'ס!",
-    priceText: " מחיר החל מ- 18 ₪ ",
-    description: "",
-    provider: "2",
-    category: "אחר - מזון",
-  };
 
   return (
     <Box
@@ -43,9 +34,9 @@ export const CouponCard: React.FC<CouponCardProps> = () => {
         position: 'relative',
         borderRadius: '8px'
       }}
-      onClick={() => dispatch(setSelectedCoupon(item))}
+      onClick={() => dispatch(setSelectedCoupon(coupon))}
     >
-      <img src={item.image}
+      <img src={coupon.image}
         width={CARD_DISPLAY.width}
         height={CARD_DISPLAY.height}
         style={{
@@ -64,7 +55,7 @@ export const CouponCard: React.FC<CouponCardProps> = () => {
           borderBottomRightRadius: '8px',
         }}
       >
-        <Typography text={item.title} context={TypographyContext.sliderCardTitle} style={{
+        <Typography text={coupon.title} context={TypographyContext.sliderCardTitle} style={{
           color: CARD_DISPLAY.text.color,
           paddingRight: '8px',
           paddingTop: '4px'

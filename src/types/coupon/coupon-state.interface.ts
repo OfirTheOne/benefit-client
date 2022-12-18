@@ -1,6 +1,7 @@
 import { Coupon } from "./coupon.interface";
 
 export interface CouponsState {
-    selectedCoupon?: Coupon
+    selectedCoupon?: Coupon;
+    coupons: Array<Coupon>;
 }
   
