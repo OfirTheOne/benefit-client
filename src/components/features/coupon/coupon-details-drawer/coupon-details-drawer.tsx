@@ -10,8 +10,7 @@ import { Typography } from '../../../infra/typography/typography';
 import { TypographyContext } from '../../../infra/typography/typography-context.enum';
 import { Button } from '../../../infra/button/button';
 
-export const CouponDetailsDrawer = () => {
-
+export const CouponDetailsDrawer: React.FC = () => {
   const selectedCoupon = useAppSelector(state => state.couponsState.selectedCoupon);
   const dispatch = useAppDispatch();
   const [state, setState] = React.useState(false);
@@ -70,7 +69,11 @@ const CouponDetails: React.FC<{ coupon: Coupon }> = ({ coupon }) => {
     >
       <Box display={'flex'} flexDirection={'row'}>
         <Box display={'flex'} margin={'12px'} >
-          <Button size='big' label={'Link'} />
+          <Button
+            onClick={() => window.open(coupon.link, '_blank', 'noreferrer')}
+            size='big'
+            label={'Link'}
+          />
         </Box>
         <Box display={'flex'} flexDirection={'column'} style={{ direction: 'rtl', marginRight: '12px' }}>
           <Box display={'flex'} >
@@ -83,9 +86,14 @@ const CouponDetails: React.FC<{ coupon: Coupon }> = ({ coupon }) => {
       </Box>
 
       <Box display={'flex'} >
-        <img 
-          style={{ marginTop: '20px', padding: '12px', width: '100vw', height: 'auto' }} 
-          src={coupon.image} 
+        <img
+          style={{
+            marginTop: '20px',
+            padding: '12px',
+            width: '100vw',
+            height: 'auto'
+          }}
+          src={coupon.image}
         />
       </Box>
     </Box>
