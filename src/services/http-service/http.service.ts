@@ -1,4 +1,5 @@
-import axios, { AxiosError, AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
+import { AxiosError, AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import log from 'loglevel';
 import { cloneDeep, isEqual } from 'lodash';
 import { getStore } from '../../redux/store';
@@ -50,7 +51,7 @@ export class HttpClientService extends BaseHttpClientService {
       this._jwt = savedJwt;
     }
 
-    this._httpClient = axios.create({ baseURL, withCredentials: true });
+    this._httpClient = axios.create({ baseURL });
     this.initializeMiddlewares();
   }
 
@@ -77,15 +78,15 @@ export class HttpClientService extends BaseHttpClientService {
           log.debug('[HttpClientService:receive] Received response data %o', { responseData: response });
         }
 
-        let newJwt = response.headers['c3jwt'];
+        let newJwt = response.headers['cJwt'];
         const contentType = response.headers['content-type'];
         let responseBody;
 
         if (contentType?.toLowerCase().startsWith('application/json')) {
           responseBody = response.data;
-          if (responseBody && responseBody['c3jwt']) {
-            newJwt = responseBody['c3jwt'];
-            delete responseBody['c3jwt'];
+          if (responseBody && responseBody['cJwt']) {
+            newJwt = responseBody['cJwt'];
+            delete responseBody['cJwt'];
           }
         }
 
@@ -109,6 +110,7 @@ export class HttpClientService extends BaseHttpClientService {
   }
 
   private handleErrorRedirects = (error: AxiosError<{ redirectURL: string }>) => {
+    alert(error.message);
     if (error.response && error.response.status === 401) {
       clearStorage();
       const { data } = error.response;
@@ -146,8 +148,6 @@ export class HttpClientService extends BaseHttpClientService {
     if (sanitizedConfig.headers?.Authorization) delete sanitizedConfig.headers.Authorization;
     return sanitizedConfig;
   }
-
-
 }
 
 let httpClientService: HttpClientService;

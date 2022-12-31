@@ -3,9 +3,9 @@ export const clearStorage: () => void = () => {
 };
 
 export const getJwt: () => string | null = () => {
-    return localStorage.getItem('s2pJwt');
+    return localStorage.getItem('cJwt');
 };
 
 export const setJwt: (jwt: string) => void = (jwt: string) => {
-    localStorage.setItem('s2pJwt', jwt);
+    localStorage.setItem('cJwt', jwt);
 };

@@ -16,7 +16,7 @@ interface CouponCarouselProps {
 export const CouponCarousel: React.FC<CouponCarouselProps> = (
     { coupons, title, style }
 ) => {
-    const items = coupons.map(c => <CouponCard coupon={c} />);
+    const items = coupons.map(c => <CouponCard key={c.id} coupon={c} />);
 
     return (
         <Box 

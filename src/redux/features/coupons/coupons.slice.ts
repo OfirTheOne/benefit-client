@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CouponsState } from '../../../types/coupon/coupon-state.interface';
 import { Coupon } from '../../../types/coupon/coupon.interface';
-import { fetchCouponsThunk } from './coupons.thunks';
+import { fetchCouponsThunk, searchCouponsThunk } from './coupons.thunks';
 
 
 export const initialState: CouponsState = {
-  coupons: []
+  coupons: {},
 };
 
 const couponsSlice = createSlice({
@@ -20,9 +20,21 @@ const couponsSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchCouponsThunk.fulfilled, (state, action) => {
-      state.coupons = action.payload;
-    })
+    builder
+      .addCase(fetchCouponsThunk.fulfilled, (state, action) => {
+        for (let couponGroup in action.payload) {
+          const couponsList = action.payload[couponGroup];
+          state.coupons[couponGroup] = {
+            list: couponsList
+          };
+        }
+      })
+      .addCase(searchCouponsThunk.fulfilled, (state, action) => {
+        state.searchResults = {
+          results: action.payload.results,
+          text: action.payload.text,
+        };
+      })
   },
 });
 
