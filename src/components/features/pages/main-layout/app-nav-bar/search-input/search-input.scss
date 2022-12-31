@@ -1,0 +1,13 @@
+
+.SearchInput {
+    .input-base {
+        color: 'inherit';
+        & .MuiInputBase-input {
+            padding: 4px, 4px, 4px, 4px;
+            padding-left: calc(1em + 8px);
+            width: 100%;
+        }
+    }
+
+
+}

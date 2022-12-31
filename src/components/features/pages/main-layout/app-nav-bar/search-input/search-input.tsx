@@ -1,55 +1,58 @@
-import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
+import React, { useCallback, useState } from 'react';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import { useAppDispatch } from '../../../../../../redux/store';
+import { searchCouponsThunk } from '../../../../../../redux/features/coupons/coupons.thunks';
+import { useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
+const Search: React.FC<React.PropsWithChildren<{ onClick?: () => void }>> = ({ children }) => <div
+  style={{
+    position: 'relative',
+    marginRight: '8px',
+    marginLeft: '12px',
     width: 'auto',
-  },
-}));
+  }}>
+  {children}
+</div>;
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-}));
-
-
-export const SearchInput: React.FC = () => <Search>
-<SearchIconWrapper>
-  <SearchIcon />
-</SearchIconWrapper>
-<StyledInputBase
-  placeholder="Search…"
-  inputProps={{ 'aria-label': 'search' }}
-/>
-</Search>
+export const SearchInput: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate()
+  const [value, setValue] = useState('')
+  const onClickSearch = useCallback(() => {
+    dispatch(searchCouponsThunk({ text: value }));
+    navigate('/search')
+  }, [value]);
+  
+  return (<Search>
+    <IconButton
+      style={{
+        position: 'absolute',
+        zIndex: 999,
+      }}
+      onClick={onClickSearch}
+      color="primary"
+      aria-label="search"
+      component="label">
+      <SearchIcon
+        onClick={onClickSearch}
+        style={{
+          color: '#1676d2'
+        }}
+      />
+    </IconButton>
+    <InputBase
+      onChange={(e) => setValue(e.target.value)}
+      className='input-base'
+      placeholder="Search…"
+      style={{
+        borderRadius: '8px',
+        background: '#f4f6f9',
+        padding: '4px 8px 4px 44px'
+      }}
+      inputProps={{ 'aria-label': 'search' }}
+    />
+  </Search >);
+}
