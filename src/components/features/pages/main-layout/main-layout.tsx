@@ -6,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 import { AppSideNav } from './app-side-nav/app-side-nav';
 import { PrimarySearchAppBar } from './app-nav-bar/app-nav-bar';
 import { ProtectedResource } from '../../../shared/protected-resource/protected-resource';
+import { BottomNavBar } from './bottom-nav-bar/bottom-nav-bar';
 
 
 function useInitEssentialData() {
@@ -27,10 +28,15 @@ export const MainLayout: React.FC<Props> = () => {
     return (
         <div className={`main`} data-testid="MainLayout" style={{ position: 'relative' }}>
             <PrimarySearchAppBar drawerOpen={drawerOpen} drawerWidth={drawerWidth}/>
+            <BottomNavBar />
             {/* <ProtectedResource>
                 <AppSideNav setDrawerOpen={setDrawerOpen}  />
             </ProtectedResource> */}
-            <div className='main-content'>
+            <div className='main-content' style={{
+                 background: '#dce3f4',
+                 display: 'flex',
+                flexDirection: 'column'
+            }}>
                 <Outlet />                            
             </div>
         </div>
