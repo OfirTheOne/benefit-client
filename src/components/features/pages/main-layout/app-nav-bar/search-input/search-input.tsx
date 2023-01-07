@@ -22,7 +22,7 @@ export const SearchInput: React.FC = () => {
   const navigate = useNavigate()
   const [value, setValue] = useState('')
   const onClickSearch = useCallback(() => {
-    dispatch(searchCouponsThunk({ text: value }));
+    dispatch(searchCouponsThunk({ text: value, skip: 0, limit: 20 }));
     navigate('/search')
   }, [value]);
   

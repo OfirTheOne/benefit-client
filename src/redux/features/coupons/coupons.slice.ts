@@ -30,10 +30,19 @@ const couponsSlice = createSlice({
         }
       })
       .addCase(searchCouponsThunk.fulfilled, (state, action) => {
-        state.searchResults = {
-          results: action.payload.results,
-          text: action.payload.text,
-        };
+        if(state.searchResults && state.searchResults.text == action.payload.text) {
+          state.searchResults.total = action.payload.total;
+          state.searchResults.result = [
+              ...state.searchResults.result, 
+              ...(action.payload.result || [])
+          ]
+        } else {
+          state.searchResults = {
+            total: action.payload.total, 
+            result: action.payload.result,
+            text: action.payload.text,
+          };
+        }
       })
   },
 });

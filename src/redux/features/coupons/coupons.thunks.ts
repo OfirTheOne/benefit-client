@@ -14,11 +14,14 @@ export const fetchCouponsThunk = createAsyncThunk('fetchCoupons', async (_, { re
 });
 
 
-export const searchCouponsThunk = createAsyncThunk<{ text: string; results: Coupon[]; }, { text: string }>('searchCoupons', async ({ text }, { rejectWithValue }) => {
+export const searchCouponsThunk = createAsyncThunk<
+  { text: string; result: Coupon[];  total: number; }, 
+  { text: string, skip: number, limit: number }
+>('searchCoupons', async ({ text, skip, limit }, { rejectWithValue }) => {
   try {
     const couponApiAdapter = getCouponApiAdapter();
-    const coupons = await couponApiAdapter.searchCoupons(text);
-    return { text, results: coupons };
+    const {result, total} = await couponApiAdapter.searchCoupons(text, skip, limit);
+    return { text, result, total };
   } catch (error) {
     const err = error as Error;
     return rejectWithValue(err.message);

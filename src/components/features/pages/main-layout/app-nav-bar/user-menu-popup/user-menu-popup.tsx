@@ -15,7 +15,7 @@ export const UserMenuPopup: React.FC = () => {
                 display: 'flex', 
                 flexDirection: 'column', 
                 justifyContent: 'space-between', 
-                height: '100%' 
+                height: '100%'  
             }}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <div> userName : {userName} </div>

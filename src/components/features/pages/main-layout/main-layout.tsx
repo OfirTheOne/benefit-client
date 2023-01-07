@@ -35,9 +35,6 @@ export const MainLayout: React.FC<Props> = () => {
             </ProtectedResource> */}
             <div 
                 ref={mainContentElementRef}
-                onScroll={(e) => {
-                    console.log(e);
-                }}
                 className='main-content' style={{
                 background: '#dce3f4',
                 display: 'flex',

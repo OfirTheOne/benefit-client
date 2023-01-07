@@ -16,9 +16,12 @@ export class CouponApiAdapter {
         };
     }
 
-    async searchCoupons(text: string): Promise<Coupon[]> {
+    async searchCoupons(text: string, skip: number, limit: number): Promise<{ 
+        result: Coupon[],
+        total: number,
+    }> {
         const url = `${this.baseurl}coupons/search`;
-        const result = await getHttpService().get<Coupon[]>(`${url}`, { params: { text }});
+        const result = await getHttpService().get<{ result: Coupon[], total: number }>(`${url}`, { params: { text, skip, limit }});
         return result.data;
     }
 }

@@ -8,8 +8,9 @@ export interface CouponsState {
         }
     },
     searchResults?: {
+        total: number;
         text: string;
-        results: Array<Coupon>;
+        result: Array<Coupon>;
     }
 }
   
