@@ -44,8 +44,9 @@ export const PrimarySearchAppBar: React.FC<{
       }:{
         transition: 'width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms,margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms'
       }} >
-        <Toolbar>
-          <IconButton
+        
+        <Toolbar style={{ justifyContent: 'center' }}>
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -53,18 +54,18 @@ export const PrimarySearchAppBar: React.FC<{
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
-          <Typography
+          </IconButton> */}
+          {/* <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
             { APP_TITLE }
-          </Typography>
+          </Typography> */}
           <SearchInput />
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          {/* <Box sx={{ flexGrow: 1 }} /> */}
+          {/* <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton
               size="large"
               edge="end"
@@ -75,7 +76,7 @@ export const PrimarySearchAppBar: React.FC<{
             >
               <AccountCircle />
             </IconButton>
-          </Box>
+          </Box> */}
         </Toolbar>
       </AppBar>
     </Box>

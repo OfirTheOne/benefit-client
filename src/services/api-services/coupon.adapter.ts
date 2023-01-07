@@ -1,11 +1,13 @@
 import { Coupon } from "../../types/coupon/coupon.interface";
 import { getHttpService } from "./../http-service/http.service";
 
+const host = window.location.host.split(':')[0];
 
 export class CouponApiAdapter {
 
+    baseurl = `http://${host}:3000/api/`
     async getAllCoupons(): Promise<Record<string, Coupon[]>> {
-        const url = 'http://localhost:3000/coupons';
+        const url = `${this.baseurl}coupons`;
         const resultProviderOne = await getHttpService().get<Coupon[]>(`${url}/1`);
         const resultProviderTow = await getHttpService().get<Coupon[]>(`${url}/2`);
         return {
@@ -15,9 +17,24 @@ export class CouponApiAdapter {
     }
 
     async searchCoupons(text: string): Promise<Coupon[]> {
-        const url = 'http://localhost:3000/coupons/search';
+        const url = `${this.baseurl}coupons/search`;
         const result = await getHttpService().get<Coupon[]>(`${url}`, { params: { text }});
         return result.data;
+    }
+}
+
+let couponApiAdapter: CouponApiAdapter;
+
+export function getCouponApiAdapter(): CouponApiAdapter {
+    if(!couponApiAdapter) {
+        couponApiAdapter = new CouponApiAdapter();
+    }
+    return couponApiAdapter;
+}
+
+
+/*
+
         return [
             {
                 "id": "coupon:7fd239e3-5aee-433a-94c1-d31e94d599ee",
@@ -220,14 +237,5 @@ export class CouponApiAdapter {
                 "category": "שופינג"
             }
         ]
-    }
-}
 
-let couponApiAdapter: CouponApiAdapter;
-
-export function getCouponApiAdapter(): CouponApiAdapter {
-    if(!couponApiAdapter) {
-        couponApiAdapter = new CouponApiAdapter();
-    }
-    return couponApiAdapter;
-}
+*/

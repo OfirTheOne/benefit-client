@@ -4,7 +4,6 @@ import { useAppSelector } from '../../../../redux/root-reducer';
 import { useAppDispatch } from '../../../../redux/store';
 import { Coupon } from '../../../../types/coupon/coupon.interface';
 import { CouponCarousel } from '../../coupon/coupon-carousel/coupon-carousel';
-import { CouponDetailsDrawer } from '../../coupon/coupon-details-drawer/coupon-details-drawer';
 
 interface Props { }
 
@@ -44,7 +43,6 @@ export const HomePage: React.FC<Props> = () => {
                     />
                     : <></>
             }
-            <CouponDetailsDrawer />
         </div>
     );
 };

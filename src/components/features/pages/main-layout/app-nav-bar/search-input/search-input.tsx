@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import IconButton from '@mui/material/IconButton';
+import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../../../../../redux/store';
 import { searchCouponsThunk } from '../../../../../../redux/features/coupons/coupons.thunks';
-import { useNavigate } from 'react-router-dom';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
+import { SEARCH_INPUT_PLACEHOLDER } from './search-input.text';
 
 const Search: React.FC<React.PropsWithChildren<{ onClick?: () => void }>> = ({ children }) => <div
   style={{
@@ -45,14 +45,15 @@ export const SearchInput: React.FC = () => {
     </IconButton>
     <InputBase
       onChange={(e) => setValue(e.target.value)}
+      onKeyDown={(e) => {if(e.key == 'Enter') onClickSearch();}}
       className='input-base'
-      placeholder="Search…"
+      placeholder={SEARCH_INPUT_PLACEHOLDER}
       style={{
         borderRadius: '8px',
         background: '#f4f6f9',
-        padding: '4px 8px 4px 44px'
+        padding: '4px 12px 4px 44px'
       }}
-      inputProps={{ 'aria-label': 'search' }}
+      inputProps={{ 'aria-label': 'search', style: { direction: 'rtl' } }}
     />
   </Search >);
 }

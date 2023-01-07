@@ -15,7 +15,7 @@ import { LoginPage } from '../components/features/pages/auth-page/login';
 import { SignUpPage } from '../components/features/pages/auth-page/signup';
 import { ErrorPage } from '../components/features/pages/error-page/error-page';
 import { HomePage } from '../components/features/pages/home-page/home-page';
-import { SearchResultPage } from '../components/features/pages/home-page/search-result.page';
+import { SearchResultPage } from '../components/features/pages/search-page/search-result.page';
 import { loginUsingExistingToken } from '../redux/features/authorization/authorization.thunks';
 import { useAppSelector } from '../redux/root-reducer';
 import { useAppDispatch } from '../redux/store';

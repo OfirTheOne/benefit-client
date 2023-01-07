@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './main-layout.scss';
-import { useAppDispatch } from '../../../../redux/store';
-import { useAppSelector } from '../../../../redux/root-reducer';
 import { Outlet } from 'react-router-dom';
-import { AppSideNav } from './app-side-nav/app-side-nav';
 import { PrimarySearchAppBar } from './app-nav-bar/app-nav-bar';
-import { ProtectedResource } from '../../../shared/protected-resource/protected-resource';
 import { BottomNavBar } from './bottom-nav-bar/bottom-nav-bar';
+import { CouponDetailsDrawer } from '../../coupon/coupon-details-drawer/coupon-details-drawer';
 
 
 function useInitEssentialData() {
 
     return {
         isEssentialDataInit: true
-           
+
     }
 }
+
+
+
 
 
 interface Props { }
@@ -24,21 +24,30 @@ export const MainLayout: React.FC<Props> = () => {
 
     const [drawerWidth, setDrawerWidth] = useState(240);
     const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+    const mainContentElementRef = useRef(null);
 
     return (
         <div className={`main`} data-testid="MainLayout" style={{ position: 'relative' }}>
-            <PrimarySearchAppBar drawerOpen={drawerOpen} drawerWidth={drawerWidth}/>
+            <PrimarySearchAppBar drawerOpen={drawerOpen} drawerWidth={drawerWidth} />
             <BottomNavBar />
             {/* <ProtectedResource>
                 <AppSideNav setDrawerOpen={setDrawerOpen}  />
             </ProtectedResource> */}
-            <div className='main-content' style={{
-                 background: '#dce3f4',
-                 display: 'flex',
-                flexDirection: 'column'
+            <div 
+                ref={mainContentElementRef}
+                onScroll={(e) => {
+                    console.log(e);
+                }}
+                className='main-content' style={{
+                background: '#dce3f4',
+                display: 'flex',
+                flexDirection: 'column',
+                marginBottom: '56px',
+                height: 'calc(100hv - 112px)',
             }}>
-                <Outlet />                            
+                <Outlet />
             </div>
+            <CouponDetailsDrawer />
         </div>
 
     );
