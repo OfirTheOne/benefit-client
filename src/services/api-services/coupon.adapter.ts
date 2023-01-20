@@ -10,9 +10,11 @@ export class CouponApiAdapter {
         const url = `${this.baseurl}coupons`;
         const resultProviderOne = await getHttpService().get<Coupon[]>(`${url}/1`);
         const resultProviderTow = await getHttpService().get<Coupon[]>(`${url}/2`);
+        const resultProviderThree = await getHttpService().get<Coupon[]>(`${url}/3`);
         return {
             ['1']: resultProviderOne.data,
             ['2']: resultProviderTow.data,
+            ['3']: resultProviderThree.data,
         };
     }
 
