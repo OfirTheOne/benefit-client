@@ -43,6 +43,15 @@ export const HomePage: React.FC<Props> = () => {
                     />
                     : <></>
             }
+            {
+                couponsMemo['3'] ?
+                    <CouponCarousel
+                        style={{ paddingRight: '8px', marginTop: '12px', marginBottom: '8px' }}
+                        title={'Max'}
+                        coupons={couponsMemo['3'].list}
+                    />
+                    : <></>
+            }
         </div>
     );
 };
