@@ -9,7 +9,7 @@ import { SearchResultList } from './search-result-list';
 
 interface Props { }
 
-const SEARCH_RESULT_DIV_ID = 'scrollableDiv'
+const SEARCH_RESULT_DIV_ID = 'scrollableDiv';
 
 export const SearchResultPage: React.FC<Props> = () => {
     const searchResults = useAppSelector(state => state.couponsState.searchResults);
